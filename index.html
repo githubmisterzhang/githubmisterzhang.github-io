@@ -38,7 +38,7 @@
         var minute = ms.getMinutes(); // 获取分 (0 ~ 59)
         var second = ms.getSeconds(); // 获取秒 (0 ~ 59)
         // 拼接时间
-        var str = year+"-"+‘month+1’+"-"+date+" "+hour+":"+minute+":"+second
+        var str = year+"-"+month+1+"-"+date+" "+hour+":"+minute+":"+second
         // 将拼接好的时间放到元素中
         div.innerText = str;
         // 设置500毫秒后再次调用showTime方法，形成一个无限循环
