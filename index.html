@@ -22,6 +22,29 @@
 <body>
 <div class="inner-center main">
   <div class="content-inside">
+   <div id="time"> </div>
+            <script>
+    // 获取要显示时间的元素
+    var div = document.getElementById("time");
+    // 先调用showTime方法
+    showTime();
+    // 定义showTime方法
+    function showTime () {
+        var ms = new Date(); // 实例化Date对象
+        var year = ms.getFullYear(); // 获取年
+        var month = ms.getMonth(); // 获取月 (0 ~ 11)
+        var date = ms.getDate(); // 获取日 (1 ~ 31)
+        var hour = ms.getHours(); // 获取时 (0 ~ 23)
+        var minute = ms.getMinutes(); // 获取分 (0 ~ 59)
+        var second = ms.getSeconds(); // 获取秒 (0 ~ 59)
+        // 拼接时间
+        var str = year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second
+        // 将拼接好的时间放到元素中
+        div.innerText = str;
+        // 设置500毫秒后再次调用showTime方法，形成一个无限循环
+        setTimeout(showTime,500);
+    }
+            </script>
     <!-- slogan start -->
     <div class="logo-box">
       <div class="logo-left">
